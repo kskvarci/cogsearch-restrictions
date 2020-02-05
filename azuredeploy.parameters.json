@@ -1,0 +1,28 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "serviceName": {
+            "value": "kskcogsearchdemo"
+        },
+        "sku": {
+            "value": "basic"
+        },
+        "networkRuleSet": {
+            "value": {
+                "endpointAccess": "Public",
+                "ipRules":[
+                    {
+                        "value": "192.168.100.0/22"
+                    },
+                    {
+                        "value": "123.123.123.124"
+                    },
+                    {
+                        "value": "192.168.101.0/22"
+                    }                    
+                ]
+            }
+        }
+    }
+}

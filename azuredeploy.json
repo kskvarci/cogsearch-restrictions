@@ -1,0 +1,36 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "serviceName": {
+            "type": "string"
+        },
+        "sku": {
+            "type": "string"
+        },
+        "networkRuleSet": {
+            "type": "object"
+        }
+        
+    },
+    "variables": {},
+    "resources": [
+        {
+            "apiVersion": "2019-10-01-Preview",
+            "name": "[parameters('serviceName')]",
+            "location": "[resourceGroup().location]",
+            "type": "Microsoft.Search/searchServices",
+            "sku": {
+                "name": "[parameters('sku')]"
+            },
+            "properties": {
+                "replicaCount": 1,
+                "partitionCount": 1,                
+                "networkRuleSet": "[parameters('networkRuleSet')]"
+            },
+            "tags": {},
+            "dependsOn": []
+        }
+    ],
+    "outputs": {}
+}
