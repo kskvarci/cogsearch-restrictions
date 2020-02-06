@@ -5,6 +5,12 @@
         "serviceName": {
             "type": "string"
         },
+        "replicaCount": {
+            "type": "string"
+        },
+        "partitionCount": {
+            "type": "string"
+        },
         "sku": {
             "type": "string"
         },
@@ -24,8 +30,8 @@
                 "name": "[parameters('sku')]"
             },
             "properties": {
-                "replicaCount": 1,
-                "partitionCount": 1,                
+                "replicaCount": "[parameters('replicaCount')]",
+                "partitionCount": "[parameters('partitionCount')]",                
                 "networkRuleSet": "[parameters('networkRuleSet')]"
             },
             "tags": {},

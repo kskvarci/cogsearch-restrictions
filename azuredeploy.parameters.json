@@ -3,23 +3,29 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "serviceName": {
-            "value": "kskcogsearchdemo"
+            "value": "kskcogdem"
         },
         "sku": {
             "value": "basic"
+        },
+        "replicaCount": {
+            "value": "1"
+        },
+        "partitionCount": {
+            "value": "1"
         },
         "networkRuleSet": {
             "value": {
                 "endpointAccess": "Public",
                 "ipRules":[
                     {
-                        "value": "192.168.100.0/22"
+                        "value": "13.86.98.0/27"
                     },
                     {
-                        "value": "123.123.123.124"
+                        "value": "20.40.129.64/26"
                     },
                     {
-                        "value": "192.168.101.0/22"
+                        "value": "50.235.206.158"
                     }                    
                 ]
             }
